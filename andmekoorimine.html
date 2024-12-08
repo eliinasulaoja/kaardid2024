@@ -11,9 +11,14 @@
 
         function automaatnupp(){
           let aadress2="https://script.google.com/macros/s/AKfycbxZ0bbMCRbDDzBLhzxUoGpFIucxwkX3TAuYdnDuff90BIDS8uIkxpep-A87X7zSQkmKWg/exec?action=nupuvajutus";
-          fetch(aadress2).then(response => response.text()).then(data => {console.log(data);
-            document.getElementById('vastus').innerText = data;}).catch(error => console.error('Päringu viga:', error)); 
-      }
+      fetch(aadress2)
+        .then(response => response.text())
+        .then(data => {
+          console.log(data);
+          document.getElementById('vastus').innerText = data;  // Kuvage automaatne vastus
+        })
+        .catch(error => console.error('Päringu viga:', error));
+    }
 
       // Käivitage automaatne nupulevajutus lehe laadimise ajal
       window.onload = function() {
